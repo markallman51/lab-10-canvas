@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <body onload = "draw()">
+        
+        <canvas id = "sketch" width = "2000" height = "1000">
+        </canvas>
+
+        <script>
+            function draw()
+            {
+                var sketch = document.getElementById('sketch');
+                var context = sketch.getContext("2d");
+
+                var xPos = 0
+                var yPos = 200
+                var circleYPos = 225
+                var shapeNum = parseInt(prompt("How many shapes would you like to see?"))
+
+                for(var i = 0; i < shapeNum; i = i + 1)
+                {
+                    if(i % 2 === 0)
+                    {
+                        context.fillStyle = 'rgb(252, 15, 192)'
+                        context.fillRect(xPos, yPos, 50, 50);
+
+                        xPos += 125
+                        // console.log("positive")
+                    }
+
+                    else
+                    {
+                        context.fillStyle = "#1338b3"
+                        context.beginPath();
+                        context.arc(xPos, circleYPos, 30, 0, 2 * Math.PI, true);
+                        context.closePath();
+                        context.fill();
+
+                        xPos += 75
+                        // console.log("negative")
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
