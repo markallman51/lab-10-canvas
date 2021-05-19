@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <body onload = "draw()">
+        
+        <canvas id = "sketch" width = "500" height = "500">
+        </canvas>
+
+        <script>
+            color = prompt("Pick a color. In hex, please.")
+            radius = parseInt(prompt("Ok, now choose a radius."))
+
+
+            function draw()
+            {
+                var sketch = document.getElementById('sketch');
+                var context = sketch.getContext("2d");
+
+                context.fillStyle = color
+                context.beginPath();
+                context.arc(355, 255, radius, 0, 2 * Math.PI, true);
+                context.closePath();
+                context.fill()
+
+                
+
+            }
+        </script>
+    </body>
+</html>
